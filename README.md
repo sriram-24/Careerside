@@ -4,7 +4,7 @@
 
 Careerside is a platform for students to prepare for the placements and for the career. It contains the resources, tutorials, practice test, resume generator for the students. 
 
-### **Getting Started **
+### **Getting Started**
 
 Careerside is a **MERN** stack application, it is written in both client side and the server side.  
 
