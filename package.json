@@ -1,5 +1,5 @@
 {
-  "name": "project-sem",
+  "name": "Careerside",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.16",
     "nodemon": "^2.0.4",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
     "lodash": ">=4.17.19"
   }
 }
