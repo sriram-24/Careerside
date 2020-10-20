@@ -1,19 +1,26 @@
 const express = require('express');
+const {validationResult,check}=require('express-validator/check')
 const router = express.Router();
 const Quiz = require('../models/Quiz');
-router.post(
-  '/',
+router.post('/',[
+    check('question','Enter a valid question').not().isEmpty(),
+    check('options','Enter options').not().isEmpty(),
+    check('correct','Enter a valid answer').not().isEmpty()
+  ],
   async (req, res) => {
-    const { quest, option, correct,tag } = req.body;
-
+    const errors=validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    const { question, options, correct,tag } = req.body;
     try {
       quiz = new Quiz({
-        quest,
-        option,
+        question,
+        options,
         correct,
         tag
       });
-      console.log(quiz);
+      //console.log(quiz);
       await quiz.save();
       res.send("data added sucessfully");
       
